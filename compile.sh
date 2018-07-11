@@ -5,8 +5,9 @@ pdflatex -jobname=resume_$(date +"%d%b%Y") cv.tex
 cp cv.tex relics/resume_$(date +"%d%b%Y").tex
 # clean up
 rm most_recent.png
-# convert the most recent pdf to 
-unameOut="$(uname)"
+# convert the most recent pdf to PNG
+# converting images is os dependent
+unameOut="$(uname)" # which os
 if [ $unameOut = "Linux" ]; then
     convert -flatten -density 300  "resume_$(date +"%d%b%Y").pdf" -quality 90 most_recent.png
 elif [ $unameOut = "Darwin" ]; then
@@ -14,7 +15,7 @@ elif [ $unameOut = "Darwin" ]; then
 else
     echo "skipping png generation..."
 fi
-    # more clean up
+# more clean up
 cp resume_$(date +"%d%b%Y").pdf most_recent.pdf
 mv resume_$(date +"%d%b%Y").pdf relics/
 rm *.log *.aux *.out

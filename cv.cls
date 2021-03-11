@@ -36,9 +36,9 @@
 	\end{center}
 }
 % fancy contact info
-\newcommand{\contact}[5]{
+\newcommand{\contact}[4]{
 	\begin{center}
-	\noindent#1 {\large\textperiodcentered} #2 {\large\textperiodcentered} #3 {\Large} #4 \ {\Large} #5
+	\noindent#1 {\large\textperiodcentered} #2 {\large\textperiodcentered} #3 {\Large} #4 
 	\end{center}
 }
 % long fancy contact info
